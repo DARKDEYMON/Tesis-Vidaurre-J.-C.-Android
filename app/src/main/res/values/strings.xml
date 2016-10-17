@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Vidaurre J. C.</string>
+
+    <!-- Strings related to login -->
+    <string name="server">http://192.168.1.2:8000/</string>
+    <string name="userdata">personal/restpersonal/currentuser/</string>
+    <string name="useritem">seguimiento/restseguimiento/currentitemuser/</string>
+    <string name="salir">Salir</string>
+    <string name="prompt_email">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Logear</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="informes_item">Lista de Items Para Informe</string>
+    <string name="lista_infomes_get">Lista de Informes</string>
+    <string name="lista_envios_get">Lista de Envios</string>
+    <string name="bienvenido">BIENVENIDO</string>
+    <string name="buscar">Buscar</string>
+    <string-array name="listitem">
+        <item>Nombre de Proyecto</item>
+        <item>Descripcion</item>
+    </string-array>
+</resources>
