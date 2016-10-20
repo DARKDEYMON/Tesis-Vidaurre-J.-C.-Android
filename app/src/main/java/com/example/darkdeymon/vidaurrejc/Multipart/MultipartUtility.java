@@ -51,7 +51,7 @@ public class MultipartUtility {
         outputStream = httpConn.getOutputStream();
         writer = new PrintWriter(new OutputStreamWriter(outputStream, charset),true);
     }
-    public MultipartUtility(String requestURL,String username, String password, String charset)
+    public MultipartUtility(String username, String password, String requestURL,String charset)
             throws IOException {
         this.charset = charset;
 
@@ -62,15 +62,13 @@ public class MultipartUtility {
         httpConn.setUseCaches(false);
         httpConn.setDoOutput(true);    // indicates POST method
         httpConn.setDoInput(true);
+        httpConn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 
-        String userCredentials = username+":"+password; //username+":"+password;
-
-                /* autenticacion*/
+        String userCredentials = username+":"+password;
         String basicAuth = "Basic " + Base64.encodeToString(userCredentials.getBytes(),Base64.NO_WRAP | Base64.URL_SAFE);
-        Log.e("pass", basicAuth);
+        Log.e("passita", basicAuth);
         httpConn.setRequestProperty ("Authorization", basicAuth);
 
-        httpConn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
         outputStream = httpConn.getOutputStream();
         writer = new PrintWriter(new OutputStreamWriter(outputStream, charset),true);
     }

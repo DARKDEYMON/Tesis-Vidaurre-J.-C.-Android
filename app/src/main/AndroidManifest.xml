@@ -10,6 +10,10 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +30,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".seleccionar" />
-        <activity android:name=".ListItem"></activity>
+        <activity android:name=".ListItem" />
+        <activity android:name=".SendItemActivity" />
+        <activity android:name=".SendFotosActivity"></activity>
     </application>
 
 </manifest>

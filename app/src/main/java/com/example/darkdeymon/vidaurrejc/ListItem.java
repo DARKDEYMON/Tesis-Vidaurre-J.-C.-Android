@@ -1,8 +1,11 @@
 package com.example.darkdeymon.vidaurrejc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -47,6 +50,16 @@ public class ListItem extends AppCompatActivity {
 
             itemAdapter adapter = new itemAdapter(getApplicationContext(),mItems);
             mListView.setAdapter(adapter);
+            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    item item=(item)parent.getAdapter().getItem(position);
+                    Log.e("id",item.getId());
+                    Intent i = new Intent(ListItem.this,SendItemActivity.class);
+                    i.putExtra("id_item",item.getId());
+                    startActivity(i);
+                }
+            });
 
             Log.e("lista",mItems.toString());
         } catch (InterruptedException e) {
