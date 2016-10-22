@@ -12,6 +12,8 @@ public class StaticValues {
     public static String GeneralPreferences = "GeneralPreferences";
     public static String SharedPreferencesAuth = "SharedPreferencesAuth";
 
+    public static String itemListaSendActivity = "item_lista";
+
     public static AccesData getLogetInfo(AppCompatActivity act){
 
         SharedPreferences mPrefs = act.getSharedPreferences(StaticValues.GeneralPreferences,act.MODE_PRIVATE);

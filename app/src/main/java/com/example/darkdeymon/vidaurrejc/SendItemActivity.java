@@ -14,18 +14,20 @@ import com.example.darkdeymon.vidaurrejc.AsyncTasks.sendReporteRest;
 import com.example.darkdeymon.vidaurrejc.classRest.AccesData;
 import com.example.darkdeymon.vidaurrejc.classRest.StaticValues;
 import com.example.darkdeymon.vidaurrejc.classRest.getReporte;
+import com.example.darkdeymon.vidaurrejc.classRest.item;
 import com.example.darkdeymon.vidaurrejc.classRest.sendReporte;
 
 import java.util.concurrent.ExecutionException;
 
 public class SendItemActivity extends AppCompatActivity {
 
-    private String id_item;
+    private item id_item;
     private EditText mAlto;
     private EditText mLargo;
     private EditText mAncho;
     private EditText mObservaciones;
     private Button mButtonItem;
+    private TextView mItemTipo;
     private AccesData mAccesData;
     private boolean envio=false;
 
@@ -39,14 +41,18 @@ public class SendItemActivity extends AppCompatActivity {
 
     public void startParams() {
         Bundle b = getIntent().getExtras();
-        this.id_item = b.getString("id_item");
-        Log.e("id_item_send",this.id_item);
+        this.id_item =item.getJsonItem(b.getString(StaticValues.itemListaSendActivity));
+        Log.e("id_item_send",this.id_item.getId());
 
         mAlto=(EditText)findViewById(R.id.item_alto);
         mLargo=(EditText)findViewById(R.id.item_largo);
         mAncho=(EditText)findViewById(R.id.item_ancho);
         mObservaciones=(EditText)findViewById(R.id.item_obserbacion);
         mButtonItem =(Button)findViewById(R.id.item_enviar_button);
+
+        mItemTipo = (TextView)findViewById(R.id.item_tipo);
+        mItemTipo.setText(mItemTipo.getText().toString()+id_item.getUnidad());
+
         mButtonItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +64,7 @@ public class SendItemActivity extends AppCompatActivity {
     }
     public void itemSend(){
         sendReporte sen = new sendReporte();
-        sen.setItem(id_item);
+        sen.setItem(id_item.getId());
         sen.setAlto(mAlto.getText().toString());
         sen.setLargo(mLargo.getText().toString());
         sen.setAncho(mAncho.getText().toString());

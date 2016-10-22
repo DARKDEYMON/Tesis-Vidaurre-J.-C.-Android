@@ -39,22 +39,35 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/informes_item"
                 android:textStyle="bold" />
-            <Button android:id="@+id/lista_informes"
+
+            <Button
+                android:id="@+id/item_requerimientos_material"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/req_materiales"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/item_requerimientos_insumos"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/req_insumos"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/lista_informes"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/lista_infomes_get"
                 android:textStyle="bold" />
-            <Button android:id="@+id/lista_envios_get"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/lista_envios_get"
-                android:textStyle="bold" />
 
-            <Button android:id="@+id/informe"
+            <Button
+                android:id="@+id/informe"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

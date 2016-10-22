@@ -80,4 +80,12 @@ public class item {
         Type t= new TypeToken<ArrayList<item>>() {}.getType();
         return g.fromJson(json,t);
     }
+    public static String getItemJson(item i){
+        Gson g= new Gson();
+        return g.toJson(i);
+    }
+    public static item getJsonItem(String i){
+        Gson g= new Gson();
+        return g.fromJson(i,item.class);
+    }
 }

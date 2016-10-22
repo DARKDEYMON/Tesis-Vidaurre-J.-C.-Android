@@ -7,6 +7,9 @@
     <string name="useritem">seguimiento/restseguimiento/currentitemuser/</string>
     <string name="senditem">seguimiento/restseguimiento/currentreporte/</string>
     <string name="sendfotos">seguimiento/restseguimiento/currentreportefotos/</string>
+    <string name="getmateriales">almacen/restalmacen/materiales/</string>
+    <string name="reqmaterial">seguimiento/restseguimiento/peticionmaterial/</string>
+
     <string name="salir">Salir</string>
     <string name="prompt_email">Username</string>
     <string name="prompt_password">Password</string>
@@ -19,13 +22,16 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="informes_item">Lista de Items Para Informe</string>
+    <string name="informes_item">Envio de Informes</string>
     <string name="lista_infomes_get">Lista de Informes</string>
-    <string name="lista_envios_get">Lista de Envios</string>
+    <string name="lista_envios_get">Requerimientos de material/insumos</string>
     <string name="bienvenido">BIENVENIDO</string>
     <string name="buscar">Buscar</string>
+    <string name="req_materiales">Requerimiento de Materiales</string>
+    <string name="req_insumos">Requerimiento de Insumos</string>
     <string-array name="listitem">
+        <item>Todo</item>
         <item>Nombre de Proyecto</item>
-        <item>Descripcion</item>
+        <item>Descripcion Item</item>
     </string-array>
 </resources>

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.darkdeymon.vidaurrejc.AsyncTasks.sendReporteFotosRest;
 import com.example.darkdeymon.vidaurrejc.classRest.AccesData;
@@ -17,6 +18,7 @@ import com.example.darkdeymon.vidaurrejc.classRest.StaticValues;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 public class SendFotosActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -89,16 +91,33 @@ public class SendFotosActivity extends AppCompatActivity implements View.OnClick
                     Log.e("select",selectedImage.toString());
                     send= new sendReporteFotosRest(mAccesData.getUsername(),mAccesData.getPassword(),this,id_item,selectedImage);
                     send.execute();
+                    resultOkToast(send);
                     break;
                 case tomarFoto:
                     if(photo.exists()) {
                         send = new sendReporteFotosRest(mAccesData.getUsername(), mAccesData.getPassword(), this, id_item, photo);
                         send.execute();
                         Log.e("take", picUri.getPath());
+                        resultOkToast(send);
                     }
                     break;
                 default:
                     break;
             }
+    }
+    void resultOkToast(sendReporteFotosRest s)
+    {
+        boolean b= false;
+        try {
+            b = s.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        if(b)
+            Toast.makeText(this,"foto añadida con exito",Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this,"La foto no se subio algo salio mal",Toast.LENGTH_SHORT).show();
     }
 }

@@ -11,20 +11,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.darkdeymon.vidaurrejc.classRest.AccesData;
 import com.example.darkdeymon.vidaurrejc.classRest.StaticValues;
-import com.google.gson.Gson;
 
-public class seleccionar extends AppCompatActivity {
+public class seleccionar extends AppCompatActivity implements View.OnClickListener{
 
     private Button mButton;
     private TextView mTextView;
     private Button mListaItem;
+    private Button mReqMateriles;
+    private Button mReqInsumos;
     private AppCompatActivity mThis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccionar);
+
         mButton =(Button)findViewById(R.id.informe);
         mThis = this;
 
@@ -32,13 +33,13 @@ public class seleccionar extends AppCompatActivity {
         mTextView.setText(getString(R.string.bienvenido)+" : "+(StaticValues.getLogetInfo(this)!=null ? StaticValues.getLogetInfo(this).getUsername() : "").toUpperCase());
 
         mListaItem = (Button)findViewById(R.id.item_informes_ged);
-        mListaItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(seleccionar.this,ListItem.class);
-                startActivity(i);
-            }
-        });
+        mListaItem.setOnClickListener(this);
+
+        mReqMateriles =(Button)findViewById(R.id.item_requerimientos_material);
+        mReqMateriles.setOnClickListener(this);
+
+        mReqInsumos =(Button)findViewById(R.id.item_requerimientos_insumos);
+        mReqInsumos.setOnClickListener(this);
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,5 +75,29 @@ public class seleccionar extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id= v.getId();
+        switch (id){
+            case R.id.item_informes_ged:
+                listaItemInformes();
+                break;
+            case R.id.item_requerimientos_material:
+                listaItemMateriales();
+                break;
+            case R.id.item_requerimientos_insumos:
+
+                break;
+        }
+    }
+    public void listaItemInformes(){
+        Intent i = new Intent(seleccionar.this,ListItemReporteActivity.class);
+        startActivity(i);
+    }
+    public void listaItemMateriales(){
+        Intent i= new Intent(seleccionar.this,ListItemReqMaterialActivity.class);
+        startActivity(i);
     }
 }
