@@ -25,8 +25,8 @@ public class SendMaterialActivity extends AppCompatActivity implements View.OnCl
 
     private Spinner mSpinnerMaterial;
     private EditText mCatidad;
-    private  EditText mPrecioTotal;
-    private  EditText mObservaciones;
+    private EditText mPrecioTotal;
+    private EditText mObservaciones;
     private Button mEnviar;
     private item mItem;
     private AccesData mAccesData;
@@ -42,6 +42,7 @@ public class SendMaterialActivity extends AppCompatActivity implements View.OnCl
     }
     public void startParams(){
         mAccesData = StaticValues.getLogetInfo(this);
+
         mSpinnerMaterial=(Spinner)findViewById(R.id.select_material);
         mCatidad=(EditText)findViewById(R.id.material_cantidad);
         mPrecioTotal=(EditText)findViewById(R.id.material_precio);
@@ -101,7 +102,7 @@ public class SendMaterialActivity extends AppCompatActivity implements View.OnCl
                 Toast.makeText(this, "Se Inserto con Exito", Toast.LENGTH_SHORT).show();
                 finish();
             }else {
-                Toast.makeText(this, "Algo A Fallado Exito", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Algo A Fallado", Toast.LENGTH_SHORT).show();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

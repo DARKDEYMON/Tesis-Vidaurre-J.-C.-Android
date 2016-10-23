@@ -9,6 +9,8 @@
     <string name="sendfotos">seguimiento/restseguimiento/currentreportefotos/</string>
     <string name="getmateriales">almacen/restalmacen/materiales/</string>
     <string name="reqmaterial">seguimiento/restseguimiento/peticionmaterial/</string>
+    <string name="getinsumos">almacen/restalmacen/insumos/</string>
+    <string name="reqinsumos">seguimiento/restseguimiento/peticioninsumo/</string>
 
     <string name="salir">Salir</string>
     <string name="prompt_email">Username</string>

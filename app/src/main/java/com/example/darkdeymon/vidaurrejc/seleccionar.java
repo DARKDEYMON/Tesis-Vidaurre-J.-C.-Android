@@ -88,7 +88,7 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
                 listaItemMateriales();
                 break;
             case R.id.item_requerimientos_insumos:
-
+                listaItemInsumos();
                 break;
         }
     }
@@ -98,6 +98,10 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
     }
     public void listaItemMateriales(){
         Intent i= new Intent(seleccionar.this,ListItemReqMaterialActivity.class);
+        startActivity(i);
+    }
+    public void listaItemInsumos(){
+        Intent i = new Intent(seleccionar.this,ListItemReqInsumosActivity.class);
         startActivity(i);
     }
 }

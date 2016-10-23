@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.darkdeymon.vidaurrejc.R;
-import com.example.darkdeymon.vidaurrejc.classRest.item;
+import com.example.darkdeymon.vidaurrejc.classRest.insumo;
 import com.example.darkdeymon.vidaurrejc.classRest.material;
 
 import java.util.ArrayList;
@@ -17,22 +17,23 @@ import java.util.ArrayList;
  * Created by DARKDEYMON on 22/10/2016.
  */
 
-public class materialAdapter extends BaseAdapter {
+public class insumoAdapter extends BaseAdapter {
+
     Context context;
-    ArrayList<material> materialArrayList;
-    public materialAdapter(Context context, ArrayList<material> itemArrayList){
+    ArrayList<insumo> insumoArrayList;
+    public insumoAdapter(Context context, ArrayList<insumo> itemArrayList){
         this.context=context;
-        this.materialArrayList=itemArrayList;
+        this.insumoArrayList=itemArrayList;
     }
 
     @Override
     public int getCount() {
-        return materialArrayList.size();
+        return insumoArrayList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return materialArrayList.get(position);
+        return insumoArrayList.get(position);
     }
 
     @Override
@@ -43,14 +44,12 @@ public class materialAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.layout_material,parent,false);
+        View view = layoutInflater.inflate(R.layout.layout_insumo,parent,false);
 
-        TextView material =(TextView)view.findViewById(R.id.material);
-
-        material m= materialArrayList.get(position);
-        if(m!=null){
-            material.setText("Nombre: "+m.getDecripcion());
-        }
+        TextView insumo =(TextView)view.findViewById(R.id.insumo);
+        insumo in=insumoArrayList.get(position);
+        if(in!=null)
+            insumo.setText("Nombre: "+in.getDecripcion());
         return view;
     }
 }

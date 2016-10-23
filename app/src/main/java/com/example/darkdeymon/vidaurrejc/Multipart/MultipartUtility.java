@@ -51,6 +51,16 @@ public class MultipartUtility {
         outputStream = httpConn.getOutputStream();
         writer = new PrintWriter(new OutputStreamWriter(outputStream, charset),true);
     }
+    /**
+     * This constructor initializes a new HTTP POST request with content type
+     * is set to multipart/form-data and Authorization
+     *
+     * @param username
+     * @param password
+     * @param requestURL
+     * @param charset
+     * @throws IOException
+     */
     public MultipartUtility(String username, String password, String requestURL,String charset)
             throws IOException {
         this.charset = charset;

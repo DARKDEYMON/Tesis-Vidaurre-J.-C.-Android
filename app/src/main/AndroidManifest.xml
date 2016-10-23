@@ -33,7 +33,9 @@
         <activity android:name=".SendItemActivity" />
         <activity android:name=".SendFotosActivity" />
         <activity android:name=".ListItemReqMaterialActivity" />
-        <activity android:name=".SendMaterialActivity"></activity>
+        <activity android:name=".SendMaterialActivity" />
+        <activity android:name=".ListItemReqInsumosActivity" />
+        <activity android:name=".SendInsumosActivity"></activity>
     </application>
 
 </manifest>
