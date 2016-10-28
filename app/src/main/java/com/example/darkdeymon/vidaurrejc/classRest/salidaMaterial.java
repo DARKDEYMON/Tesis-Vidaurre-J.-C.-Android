@@ -7,13 +7,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
- * Created by DARKDEYMON on 27/10/2016.
+ * Created by DARKDEYMON on 28/10/2016.
  */
 
-public class salidaInsumo {
+public class salidaMaterial {
     String id;
     String almacen;
-    String insumos;
+    String material;
     String item;
     Boolean confirmado;
     String fecha;
@@ -35,12 +35,12 @@ public class salidaInsumo {
         this.almacen = almacen;
     }
 
-    public String getInsumos() {
-        return insumos;
+    public String getMaterial() {
+        return material;
     }
 
-    public void setInsumos(String insumos) {
-        this.insumos = insumos;
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
     public String getItem() {
@@ -74,17 +74,17 @@ public class salidaInsumo {
     public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
     }
-    public static ArrayList<salidaInsumo> getListSalidaInsumo(String json){
+    public static ArrayList<salidaMaterial> getListSalidaMaterial(String json){
         Gson g= new Gson();
-        Type t= new TypeToken<ArrayList<salidaInsumo>>(){}.getType();
+        Type t= new TypeToken<ArrayList<salidaMaterial>>(){}.getType();
         return g.fromJson(json,t);
     }
-    public static String getJsonSalidaInsumo(salidaInsumo s){
+    public static String getJsonSalidaMaterial(salidaMaterial s){
         Gson g= new Gson();
         return g.toJson(s);
     }
-    public static salidaInsumo getSalidaInsumoFromJson (String  json){
+    public static salidaMaterial getSalidaMaterialFromJson (String  json){
         Gson g= new Gson();
-        return g.fromJson(json,salidaInsumo.class);
+        return g.fromJson(json,salidaMaterial.class);
     }
 }

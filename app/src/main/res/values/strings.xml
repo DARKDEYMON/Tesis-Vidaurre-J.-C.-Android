@@ -12,6 +12,7 @@
     <string name="getinsumos">almacen/restalmacen/insumos/</string>
     <string name="reqinsumos">seguimiento/restseguimiento/peticioninsumo/</string>
     <string name="getsalidainsumos">almacen/restalmacen/salidainsumos/</string>
+    <string name="getsalidamaterial">almacen/restalmacen/salidamaterial/</string>
 
     <string name="salir">Salir</string>
     <string name="prompt_email">Username</string>

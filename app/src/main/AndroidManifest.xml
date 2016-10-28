@@ -37,7 +37,9 @@
         <activity android:name=".ListItemReqInsumosActivity" />
         <activity android:name=".SendInsumosActivity" />
         <activity android:name=".ListInsumosConfActivity" />
-        <activity android:name=".SendInsumosConfActivity"></activity>
+        <activity android:name=".SendInsumosConfActivity" />
+        <activity android:name=".ListMaterialesConfActivity" />
+        <activity android:name=".SendMaterialesConfActivity"></activity>
     </application>
 
 </manifest>

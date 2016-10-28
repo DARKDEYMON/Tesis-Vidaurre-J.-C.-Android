@@ -102,7 +102,7 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
                 listaItemInsumos();
                 break;
             case R.id.conf_materiales:
-
+                listaConfMaterial();
                 break;
             case  R.id.conf_insumos:
                 listaConfInsumos();
@@ -123,6 +123,10 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
     }
     public void listaConfInsumos(){
         Intent i= new Intent(seleccionar.this,ListInsumosConfActivity.class);
+        startActivity(i);
+    }
+    public void listaConfMaterial(){
+        Intent i= new Intent(seleccionar.this,ListMaterialesConfActivity.class);
         startActivity(i);
     }
 }
