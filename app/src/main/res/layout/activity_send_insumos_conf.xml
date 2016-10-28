@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_send_insumos_conf"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.darkdeymon.vidaurrejc.SendInsumosConfActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="!!!Atencion solo confime la recepcion de el encio llego completo"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/txid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Numero de envio: "
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/txalmacen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Almacen: "
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/txinsumo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insumos: "
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/txitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Item :"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/txfecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Envio: "
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/txcantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cantidad: "
+            android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/confirmar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmar" />
+    </LinearLayout>
+
+</RelativeLayout>

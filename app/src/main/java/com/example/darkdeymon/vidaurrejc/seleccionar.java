@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,6 +21,10 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
     private Button mListaItem;
     private Button mReqMateriles;
     private Button mReqInsumos;
+
+    private Button mConfMateriales;
+    private Button mConfinsumos;
+
     private AppCompatActivity mThis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,12 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
 
         mReqInsumos =(Button)findViewById(R.id.item_requerimientos_insumos);
         mReqInsumos.setOnClickListener(this);
+
+        mConfMateriales =(Button)findViewById(R.id.conf_materiales);
+        mConfMateriales.setOnClickListener(this);
+
+        mConfinsumos =(Button)findViewById(R.id.conf_insumos);
+        mConfinsumos.setOnClickListener(this);
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +101,12 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
             case R.id.item_requerimientos_insumos:
                 listaItemInsumos();
                 break;
+            case R.id.conf_materiales:
+
+                break;
+            case  R.id.conf_insumos:
+                listaConfInsumos();
+                break;
         }
     }
     public void listaItemInformes(){
@@ -102,6 +119,10 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
     }
     public void listaItemInsumos(){
         Intent i = new Intent(seleccionar.this,ListItemReqInsumosActivity.class);
+        startActivity(i);
+    }
+    public void listaConfInsumos(){
+        Intent i= new Intent(seleccionar.this,ListInsumosConfActivity.class);
         startActivity(i);
     }
 }

@@ -27,6 +27,13 @@ public class JasonMultipartSend {
         }
         return sb.toString();
     }
+    private Boolean put;
+    public JasonMultipartSend(){
+        this.put=false;
+    }
+    public JasonMultipartSend(Boolean put){
+        this.put=put;
+    }
     public String getData(URL url, String username, String password, String data){
 
         HttpURLConnection res= null;
@@ -36,7 +43,10 @@ public class JasonMultipartSend {
             res.setDoOutput(true);
             res.setDoInput(true);
             res.setRequestProperty( "Content-Type", "application/json" );
-            res.setRequestMethod("POST");
+            if(put)
+                res.setRequestMethod("PUT");
+            else
+                res.setRequestMethod("POST");
              /* autenticacion*/
             String userCredentials = username+":"+password;
             String basicAuth = "Basic " + Base64.encodeToString(userCredentials.getBytes(),Base64.NO_WRAP | Base64.URL_SAFE);

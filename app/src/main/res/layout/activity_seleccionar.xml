@@ -58,12 +58,21 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/lista_informes"
+                android:id="@+id/conf_materiales"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/lista_infomes_get"
+                android:text="@string/confirmacion_de_materiales"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/conf_insumos"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/confirmacion_de_insumos"
                 android:textStyle="bold" />
 
             <Button

@@ -13,6 +13,7 @@ public class StaticValues {
     public static String SharedPreferencesAuth = "SharedPreferencesAuth";
 
     public static String itemListaSendActivity = "item_lista";
+    public static String salidaInsumoActivity = "salida_item_lista";
 
     public static AccesData getLogetInfo(AppCompatActivity act){
 

@@ -11,6 +11,7 @@
     <string name="reqmaterial">seguimiento/restseguimiento/peticionmaterial/</string>
     <string name="getinsumos">almacen/restalmacen/insumos/</string>
     <string name="reqinsumos">seguimiento/restseguimiento/peticioninsumo/</string>
+    <string name="getsalidainsumos">almacen/restalmacen/salidainsumos/</string>
 
     <string name="salir">Salir</string>
     <string name="prompt_email">Username</string>
@@ -31,6 +32,8 @@
     <string name="buscar">Buscar</string>
     <string name="req_materiales">Requerimiento de Materiales</string>
     <string name="req_insumos">Requerimiento de Insumos</string>
+    <string name="confirmacion_de_insumos">Confirmacion de Insumos</string>
+    <string name="confirmacion_de_materiales">confirmacion de materiales</string>
     <string-array name="listitem">
         <item>Todo</item>
         <item>Nombre de Proyecto</item>
