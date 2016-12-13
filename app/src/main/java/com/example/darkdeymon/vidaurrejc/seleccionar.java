@@ -31,7 +31,8 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccionar);
 
-        mButton =(Button)findViewById(R.id.informe);
+
+        //mButton =(Button)findViewById(R.id.informe);
         mThis = this;
 
         mTextView = (TextView)findViewById(R.id.username);
@@ -52,12 +53,14 @@ public class seleccionar extends AppCompatActivity implements View.OnClickListen
         mConfinsumos =(Button)findViewById(R.id.conf_insumos);
         mConfinsumos.setOnClickListener(this);
 
+        /*
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mButton.setText(StaticValues.getLogetInfo(mThis)!=null ? StaticValues.getLogetInfo(mThis).getUsername() : "");
             }
         });
+        */
     }
 
 

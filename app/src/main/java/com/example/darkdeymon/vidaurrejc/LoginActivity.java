@@ -68,9 +68,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        areLoget();
         setContentView(R.layout.activity_login);
-
+        areLoget();
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         //populateAutoComplete();
@@ -112,8 +111,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Log.e("hay algo 1",json);
         if(json.compareTo("")==0)
             return;
-        AccesData obj = AccesData.getData(json);
-        login(obj.getUsername(),obj.getPassword());
+        else{
+            AccesData obj = AccesData.getData(json);
+            login(obj.getUsername(),obj.getPassword());
+            return;
+        }
     }
     public boolean areLogetBool(){
         Gson gson = new Gson();
@@ -124,7 +126,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Log.e("hay algo 1",json);
         if(json.compareTo("")==0)
             return false;
-        return true;
+        else{
+            AccesData obj = AccesData.getData(json);
+            loginRest l = new loginRest(obj.getUsername(),obj.getPassword(),this);
+            l.execute();
+            try {
+                return l.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                return false;
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
     }
     /* login */
     private void login(String username, String password){
@@ -140,18 +155,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             else {
                 Log.e("ejecutar","no logeado");
                 Toast.makeText(getApplicationContext(),"Error de Logeo",Toast.LENGTH_SHORT).show();
+                return;
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
+            return;
         } catch (ExecutionException e) {
             e.printStackTrace();
+            return;
         }
 
     }
     /*puede q si*/
     @Override
     protected void onRestart() {
-        Log.e("onresume", String.valueOf(areLogetBool()));
+        Log.e("onrestart", String.valueOf(areLogetBool()));
         if(areLogetBool())
         {
             finish();

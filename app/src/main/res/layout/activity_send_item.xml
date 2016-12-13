@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="!!Atencion el suiente informe se mide en: "
+                android:text="!!Atencion el siguiente informe se mide en: "
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:gravity="center"/>
